@@ -16,7 +16,6 @@
             overflow-x: hidden; /* Prevent horizontal scroll from animations */
         }
 
-        /* --- Windows 95 UI Styling --- */
         .window {
             background: #c0c0c0;
             border-top: 2px solid #ffffff;
@@ -99,7 +98,6 @@
             border: 1px dashed #ffffff;
         }
 
-        /* --- Slideshow Styling --- */
         .slideshow-container {
             position: relative;
             background-color: #000;
@@ -123,7 +121,6 @@
             border-top: 2px solid #808080;
         }
         
-        /* --- Scroll Animation --- */
         .animated-widget {
             opacity: 0;
             transform: translateY(30px);
@@ -134,25 +131,71 @@
             transform: translateY(0);
         }
 
-        /* --- LinkedIn Badge Styling --- */
         .badge-base {
-            margin: 0; /* Remove default margin */
+            margin: 0; 
         }
         
-        /* --- NEW: Badge Container Styling --- */
         .badge-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            align-items: center; /* Vertically center items */
-            gap: 1.5rem; /* 24px */
+            align-items: center; 
+            gap: 1.5rem; 
             margin: 1.5rem auto;
         }
 
         .github-stats-card {
-            max-width: 100%; /* Ensure it's responsive */
+            max-width: 100%; 
             height: auto;
         }
+
+        .bio-container {
+            display: flex;
+            flex-direction: row;
+            padding-right: 0.25rem;
+        }
+
+        .tag {
+            border-top: 2px solid #000000;
+            border-left: 2px solid #000000;
+            border-right: 2px solid #ffffff;
+            border-bottom: 2px solid #ffffff;
+            padding: 0.25rem 0.5rem;
+            white-space: nowrap;
+        }
+
+        .timeline {
+            border-left: 2px dashed #808080;
+            margin-left: 1rem;
+            padding-left: 1.5rem;
+            margin-top: 1rem;
+        }
+        .timeline-item {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .timeline-marker {
+            position: absolute;
+            left: -1.9rem; /* Aligns with the dashed border */
+            top: 0.35rem;
+            width: 14px;
+            height: 14px;
+            background: #c0c0c0;
+            border-top: 2px solid #ffffff;
+            border-left: 2px solid #ffffff;
+            border-right: 2px solid #000000;
+            border-bottom: 2px solid #000000;
+        }
+        .timeline-marker.completed { background: #000080; } /* Navy */
+        .timeline-marker.current { background: #008000; } /* Green */
+        .timeline-marker.planned { background: #808080; } /* Gray */
+        
+        .course-list {
+            list-style-type: square;
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
     </style>
 </head>
 <body class="text-xl">
@@ -162,20 +205,21 @@
             <a href="#" id="home-link" class="text-3xl tracking-wider text-black">C:\Users\Daniel</a>
             <div id="main-nav-links" class="hidden md:flex items-center space-x-8">
                 <a href="#about" class="hover:underline">About</a>
-                <a href="#experience" class="hover:underline">Experience</a>
                 <a href="#projects" class="hover:underline">Projects</a>
+                <a href="#experience" class="hover:underline">Experience</a>
+                <a href="#courses" class="hover:underline">Courses</a>
                 <a href="#contact" class="hover:underline">Contact</a>
             </div>
             <button id="mobile-menu-button" class="md:hidden win-button p-2">
                 Menu
             </button>
         </nav>
-        <!-- Mobile Menu --><div id="mobile-menu" class="md:hidden hidden bg-[#c0c0c0] border-t-2 border-black">
+        <div id="mobile-menu" class="md:hidden hidden bg-[#c0c0c0] border-t-2 border-black">
             <div class="p-2 space-y-1">
                 <a href="#about" class="block p-2">About.txt</a>
-                <a href="#education" class="block p-2">Education.txt</a>
-                <a href="#experience" class="block p-2">Experience.log</a>
                 <a href="#projects" class="block p-2">Projects.exe</a>
+                <a href="#experience" class="block p-2">Experience.log</a>
+                <a href="#courses" class="block p-2">Transcript.log</a>
                 <a href="#contact" class="block p-2">Contact.inf</a>
             </div>
         </div>
@@ -193,52 +237,59 @@
                     <div class="title-bar">
                         <div class="title-bar-text">About_Me.txt</div>
                     </div>
-                    <div class="window-body text-2xl">
-                        <p>Hello! I'm an undergraduate Computer Engineering student at Texas A&M University with experience in both hardware and software development. I have an interest in all sorts of fields in computing! Take some time to check out my projects and please feel free to reach out with any questions or opportunities to connect!</p>
+                    <div class="bio-container">
+                        <div class="window-body text-2xl">
+                            <p>Hello! I'm an undergraduate Computer Engineering student at Texas A&M University. Specific interests of mine include computer vision, web development, operating systems, and hardware design. More about me and my projects can be found below!</p>
+                        </div>
+                        <div class="flex flex-col justify-center flex-nowrap gap-2 mt-2">
+                            <p class="tag">Graduating: May 2027</p>
+                            <p class="tag">Minor in Mathematics</p>
+                            <p class="tag">GPA: 3.5</p>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Projects Section --><section id="projects" class="mb-12">
-                <!-- Added animated-widget class --><div class="window animated-widget">
+            <section id="projects" class="mb-12">
+                <div class="window animated-widget">
                     <div class="title-bar">
                         <div class="title-bar-text">Projects.exe</div>
                     </div>
                     <div class="window-body">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <!-- Project 4 --><!-- Added animated-widget class --><div class="window animated-widget" style="transition-delay: 150ms;">
-                               <!-- MODIFIED: Updated src to envelope_1 --><img class="w-full h-56 object-cover border-b-2 border-black" src="resources/envelope_3.jpg" alt="Envelope - Internet-Connected Message Display">
+                            <div class="window animated-widget" style="transition-delay: 150ms;">
+                               <img class="w-full h-56 object-cover border-b-2 border-black" src="resources/envelope_3.jpg" alt="Envelope - Internet-Connected Message Display">
                                <div class="p-4">
                                    <h3 class="text-2xl font-bold mb-2">Envelope - Internet-Connected Message Display</h3>
-                                   <p class="mb-4">A project built for my girlfriend using a Cheap-Yellow-Display. This device is placed on a desk or nightstand, displaying real-time messages sent over the internet.</p>
-                                   <!-- This button will trigger the project detail view --><button class="win-button project-detail-button" data-project-id="proj4">Details</button>
+                                   <p class="mb-4">This device is placed on a desk or nightstand, displaying real-time messages sent over the internet in a stylized package. Built using a $20 Cheap-Yellow-Display with an ESP32.</p>
+                                   <button class="win-button project-detail-button" data-project-id="proj4">Details</button>
                                </div>
                             </div>
 
-                            <!-- Project 2 --><!-- Added animated-widget class --><div class="window animated-widget" style="transition-delay: 300ms;">
-                                <!-- MODIFIED: Updated src to notion_1 --><img class="w-full h-56 object-cover border-b-2 border-black" src="resources/notion_1.png" alt="Notion Study Guide Generator">
+                            <div class="window animated-widget" style="transition-delay: 300ms;">
+                                <img class="w-full h-56 object-cover border-b-2 border-black" src="resources/notion_1.png" alt="Notion Study Guide Generator">
                                 <div class="p-4">
                                     <h3 class="text-2xl font-bold mb-2">ChatGPT/Notion Study Guide Generator</h3>
                                     <p class="mb-4">A full-stack Gantt Chart generator that feeds study topics directly into a user's Notion account via the Notion API. Built for the 2025 Build4Good Hackathon.</p>
-                                    <!-- This button will trigger the project detail view --><button class="win-button project-detail-button" data-project-id="proj2">Details</button>
+                                    <button class="win-button project-detail-button" data-project-id="proj2">Details</button>
                                 </div>
                             </div>
 
-                            <!-- Project 1 --><!-- Added animated-widget class --><div class="window animated-widget" style="transition-delay: 150ms;">
-                               <!-- MODIFIED: Updated src to mp3_1 --><img class="w-full h-56 object-cover border-b-2 border-black" src="resources/mp3_1.png" alt="MP3 Music App">
+                            <div class="window animated-widget" style="transition-delay: 150ms;">
+                               <img class="w-full h-56 object-cover border-b-2 border-black" src="resources/mp3_1.png" alt="MP3 Music App">
                                <div class="p-4">
                                    <h3 class="text-2xl font-bold mb-2">MP3 Music App (Windows)</h3>
                                    <p class="mb-4">A desktop music player for Windows created using C# and WPF, including features like audio playback and file management.</p>
-                                   <!-- This button will trigger the project detail view --><button class="win-button project-detail-button" data-project-id="proj1">Details</button>
+                                   <button class="win-button project-detail-button" data-project-id="proj1">Details</button>
                                </div>
                             </div>
                             
-                            <!-- MODIFIED: Project 3 --><div class="window animated-widget" style="transition-delay: 150ms;">
+                            <div class="window animated-widget" style="transition-delay: 150ms;">
                                <img class="w-full h-56 object-cover border-b-2 border-black" src="resources/arduino_1.png" alt="Arduino LCD Menu Screen">
                                <div class="p-4">
                                    <h3 class="text-2xl font-bold mb-2">Arduino LCD Menu Screen</h3>
                                    <p class="mb-4">A C++ based menu screen for an LCD using a rotary encoder, designed for Arduino components. (Work in Progress)</p>
-                                   <!-- This button now opens details --><button class="win-button project-detail-button" data-project-id="proj3">Details</button>
+                                   <button class="win-button project-detail-button" data-project-id="proj3">Details</button>
                                </div>
                             </div>
 
@@ -247,8 +298,8 @@
                 </div>
             </section>
 
-            <!-- Experience Section --><section id="experience" class="mb-12">
-                 <!-- Added animated-widget class --><div class="window animated-widget">
+            <section id="experience" class="mb-12">
+                 <div class="window animated-widget">
                     <div class="title-bar">
                         <div class="title-bar-text">Experience.log</div>
                     </div>
@@ -267,19 +318,130 @@
                 </div>
             </section>
 
-            <!-- Contact Section --><section id="contact" class="mb-12">
-                <!-- Added animated-widget class --><div class="window animated-widget">
+            <section id="courses" class="mb-12">
+                 <div class="window animated-widget">
+                    <div class="title-bar">
+                        <div class="title-bar-text">Transcript.log</div>
+                    </div>
+                    <div class="window-body text-2xl">
+                        <p class="mb-4">A timeline of my academic coursework at Texas A&M, including my Computer Engineering core and Mathematics minor.</p>
+                        
+                        <div class="flex flex-wrap gap-6 mb-6 text-xl p-2 border-2 border-gray-500 bg-[#c0c0c0]">
+                            <div class="flex items-center gap-2"><div class="w-4 h-4 bg-[#000080] border-t-2 border-l-2 border-white border-r-2 border-b-2 border-r-black border-b-black"></div> Completed</div>
+                            <div class="flex items-center gap-2"><div class="w-4 h-4 bg-[#008000] border-t-2 border-l-2 border-white border-r-2 border-b-2 border-r-black border-b-black"></div> Current (Spring 2026)</div>
+                            <div class="flex items-center gap-2"><div class="w-4 h-4 bg-[#808080] border-t-2 border-l-2 border-white border-r-2 border-b-2 border-r-black border-b-black"></div> Planned</div>
+                        </div>
+
+                        <div class="timeline mt-6">
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-marker completed"></div>
+                                <h3 class="text-3xl font-bold">Years 1 & 2 (Fall 2023 - Spring 2025)</h3>
+                                <p class="text-xl italic mb-4">Foundations & Core Engineering</p>
+                                <ul class="course-list space-y-4">
+                                    <li>
+                                        ENGR 102: ENGR Lab 1 Computation
+                                        <div class="flex flex-wrap gap-2 mt-2 text-lg"><span class="tag bg-[#c0c0c0]">Python</span></div>
+                                    </li>
+                                    <li>
+                                        CSCE 120: Program Design and Concepts
+                                        <div class="flex flex-wrap gap-2 mt-2 text-lg"><span class="tag bg-[#c0c0c0]">C++</span></div>
+                                    </li>
+                                    <li>
+                                        CSCE 221: Data Structures and Algorithms
+                                        <div class="flex flex-wrap gap-2 mt-2 text-lg"><span class="tag bg-[#c0c0c0]">C++</span></div>
+                                    </li>
+                                    <li>
+                                        CSCE 222: Discrete Structures for Computing
+                                    </li>
+                                    <li>
+                                        ECEN 248: Digital Systems Design
+                                        <div class="flex flex-wrap gap-2 mt-2 text-lg"><span class="tag bg-[#c0c0c0]">Verilog</span><span class="tag bg-[#c0c0c0]">Breadboarding</span></div>
+                                    </li>
+                                    <li>
+                                        ECEN 214: Electric Circuit Theory
+                                        <div class="flex flex-wrap gap-2 mt-2 text-lg"><span class="tag bg-[#c0c0c0]">LTSpice</span><span class="tag bg-[#c0c0c0]">Breadboarding</span></div>
+                                    </li>
+                                    <li>MATH 151/152/251: Engineering Mathematics (Calculus 1-3)</li>
+                                    <li>MATH 308: Differential Equations</li>
+                                    <li>PHYS 206/207: Newtonian Mechanics & Electricity/Magnetism</li>
+                                </ul>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker current"></div>
+                                <h3 class="text-3xl font-bold">Year 3 (Fall 2025 - Spring 2026)</h3>
+                                <p class="text-xl italic mb-4">Advanced Systems & Math Minor</p>
+                                <ul class="course-list space-y-4">
+                                    <li>STAT 211: Principles of Statistics 1</li>
+                                    <li>
+                                        CSCE 313: Introduction to Computer Systems
+                                        <div class="flex flex-wrap gap-2 mt-2 text-lg"><span class="tag bg-[#c0c0c0]">OS</span><span class="tag bg-[#c0c0c0]">C++</span><span class="tag bg-[#c0c0c0]">Assembly</span></div>
+                                    </li>
+                                    <li>
+                                        CSCE 331: Foundations of Software Engineering
+                                        <div class="flex flex-wrap gap-2 mt-2 text-lg">
+                                            <span class="tag bg-[#c0c0c0]">HTML/CSS</span>
+                                            <span class="tag bg-[#c0c0c0]">JS/TS</span>
+                                            <span class="tag bg-[#c0c0c0]">Java</span>
+                                            <span class="tag bg-[#c0c0c0]">PostgreSQL</span>
+                                            <span class="tag bg-[#c0c0c0]">React</span>
+                                            <span class="tag bg-[#c0c0c0]">Next.js</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        CSCE 462: Microcomputer Systems
+                                        <div class="flex flex-wrap gap-2 mt-2 text-lg"><span class="tag bg-[#c0c0c0]">Python</span><span class="tag bg-[#c0c0c0]">C++</span><span class="tag bg-[#c0c0c0]">Breadboarding</span></div>
+                                    </li>
+                                    <li>ECEN 314: Signals and Systems</li>
+                                    <li>
+                                        ECEN 325: Electronics
+                                        <div class="flex flex-wrap gap-2 mt-2 text-lg"><span class="tag bg-[#c0c0c0]">Multisim</span><span class="tag bg-[#c0c0c0]">Breadboarding</span></div>
+                                    </li>
+                                    <li>
+                                        ECEN 350: Computer Architecture and Design
+                                        <div class="flex flex-wrap gap-2 mt-2 text-lg"><span class="tag bg-[#c0c0c0]">Verilog</span><span class="tag bg-[#c0c0c0]">Assembly</span><span class="tag bg-[#c0c0c0]">C++</span><span class="tag bg-[#c0c0c0]">Breadboarding</span></div>
+                                    </li>
+                                    <li>MATH 311: Topics in Applied Math 1 (Linear Algebra + Vector Calculus)</li>
+                                </ul>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker planned"></div>
+                                <h3 class="text-3xl font-bold">Year 4 (Fall 2026 - Spring 2027)</h3>
+                                <p class="text-xl italic mb-4">Specialization & Capstone</p>
+                                <ul class="course-list space-y-4">
+                                    <li>ECEN 403 + 404: Senior Capstone Design</li>
+                                    <li>
+                                        ECEN 454: Digital IC Design
+                                    </li>
+                                    <li>
+                                        CSCE 435: Parallel Computing
+                                    </li>
+                                    <li>MATH 470: Communications and Cryptography</li>
+                                    <li>Elective 3: TBD</li>
+                                    <li>Elective 4: TBD</li>
+                                    <li>Elective 5: TBD</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="mb-12">
+                <div class="window animated-widget">
                     <div class="title-bar">
                         <div class="title-bar-text">Contact.inf</div>
                     </div>
                     <div class="window-body text-center">
-                        <p class="text-2xl mb-6">I'm currently seeking new opportunities. Feel free to connect!</p>
+                        <p class="text-2xl mb-6">Please reach out to connect!</p>
                         
-                        <!-- NEW: Badge Container --><div class="badge-container">
-                            <!-- LinkedIn Badge - Removed the <a class="badge-base__link LI-simple-link">Daniel Davis</a> --><div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="daniel-davis-bb90802a9" data-version="v1">
-                                <!-- Removed: <a class="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/daniel-davis-bb90802a9?trk=profile-badge">Daniel Davis</a> --></div>
+                        <div class="badge-container">
+                            <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="daniel-davis-bb90802a9" data-version="v1">
+                                </div>
 
-                            <!-- GitHub Stats Badge --><a href="https://github.com/danielwd27" target="_blank" rel="noopener noreferrer">
+                            <a href="https://github.com/danielwd27" target="_blank" rel="noopener noreferrer">
                                 <img src="https://github-readme-stats.vercel.app/api?username=danielwd27&show_icons=true&border_color=000000&title_color=000080&icon_color=000080&text_color=000000&hide_border=false" 
                                      alt="Daniel Davis' GitHub Stats" 
                                      class="github-stats-card" />
@@ -296,17 +458,17 @@
             </section>
         </main>
 
-        <!-- Footer --><footer class="container mx-auto px-6 pb-6">
+        <footer class="container mx-auto px-6 pb-6">
             <div class="window animated-widget">
                 <div class="status-bar">
-                    <p>&copy; 2025 Daniel Davis. All Rights Reserved.</p>
+                    <p>&copy; 2026 Daniel Davis.</p>
                 </div>
             </div>
         </footer>
     </div>
 
-    <!-- This div is hidden by default and will hold the project detail content --><div id="project-detail-container" class="hidden container mx-auto px-6 py-12">
-        <!-- Project detail content will be injected here by JavaScript --></div>
+    <div id="project-detail-container" class="hidden container mx-auto px-6 py-12">
+        </div>
 
 
     <script>
@@ -316,7 +478,6 @@
         const projectData = {
             "proj1": {
                 title: "MP3 Music App (Windows)",
-                // MODIFIED: Updated image path
                 images: [
                     "resources/mp3_1.png"
                 ],
@@ -324,7 +485,6 @@
             },
             "proj2": {
                 title: "ChatGPT/Notion Study Guide Generator",
-                // MODIFIED: Updated image paths
                 images: [
                     "resources/notion_1.png",
                     "resources/notion_2.png"
@@ -349,7 +509,7 @@
                     "resources/envelope_4.png",
                     "resources/envelope_1.jpg"
                 ],
-                description: "This is a project I made for my girlfriend for Christmas over about a month. It's built with an ESP32 CYD (Cheap-yellow-display) bought for just over $20. With a 3d printed case, this device sits on a desk or nightstand, displaying real-time messages sent over the internet. This is the most ambitious project I've created to date, please view the full features, details, and source code on the GitHub repository linked below.",
+                description: "With a 3d printed case, this device sits on a desk or nightstand, displaying real-time messages sent over the internet. It's built with an ESP32 CYD (Cheap-yellow-display) bought for just over $20. This is the most ambitious project I've created to date, please view the full features, details, and source code on the GitHub repository linked below.",
                 repoUrl: "https://github.com/danielwd27/Envelope"
             }
         };
@@ -601,7 +761,7 @@
 
     </script>
     
-    <!-- ADDED: LinkedIn Badge Script --><script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 
 </body>
 </html>
