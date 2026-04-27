@@ -254,7 +254,7 @@
                     </div>
                     <div class="bio-container">
                         <div class="window-body text-2xl">
-                            <p>Hello! I'm an undergraduate Computer Engineering student at Texas A&M University. Specific interests of mine include computer vision, web development, operating systems, and hardware design. More about me and my projects can be found below!</p>
+                            <p>Hello! I'm an undergraduate Computer Engineering student at Texas A&M University. Specific interests of mine include computer vision, web development, operating systems, embedded, and hardware design. More about me and my projects can be found below!</p>
                         </div>
                         <div class="flex flex-col justify-center flex-nowrap gap-2 mt-2">
                             <p class="tag">Graduating: May 2027</p>
@@ -281,6 +281,15 @@
                                </div>
                             </div>
 
+                            <div class="window animated-widget" style="transition-delay: 150ms;">
+                               <img class="w-full h-56 object-cover border-b-2 border-black" src="resources/lidar_1.png" alt="LiDAR Scanner">
+                               <div class="p-4">
+                                   <h3 class="text-2xl font-bold mb-2">3D Space Mapping LiDAR Scanner</h3>
+                                   <p class="mb-4">A comprehensive LiDAR scanner designed and constructed entirely from the ground up. Built with a TOF sensor, 2 motors, and a microcontroller. Programmed in C++ and Python.</p>
+                                   <button class="win-button project-detail-button" data-project-id="proj1">Details</button>
+                               </div>
+                            </div>
+
                             <div class="window animated-widget" style="transition-delay: 300ms;">
                                 <img class="w-full h-56 object-cover border-b-2 border-black" src="resources/notion_1.png" alt="Notion Study Guide Generator">
                                 <div class="p-4">
@@ -291,19 +300,10 @@
                             </div>
 
                             <div class="window animated-widget" style="transition-delay: 150ms;">
-                               <img class="w-full h-56 object-cover border-b-2 border-black" src="resources/mp3_1.png" alt="MP3 Music App">
-                               <div class="p-4">
-                                   <h3 class="text-2xl font-bold mb-2">MP3 Music App (Windows)</h3>
-                                   <p class="mb-4">A desktop music player for Windows created using C# and WPF, including features like audio playback and file management.</p>
-                                   <button class="win-button project-detail-button" data-project-id="proj1">Details</button>
-                               </div>
-                            </div>
-                            
-                            <div class="window animated-widget" style="transition-delay: 150ms;">
                                <img class="w-full h-56 object-cover border-b-2 border-black" src="resources/arduino_1.png" alt="Arduino LCD Menu Screen">
                                <div class="p-4">
                                    <h3 class="text-2xl font-bold mb-2">Arduino LCD Menu Screen</h3>
-                                   <p class="mb-4">A C++ based menu screen for an LCD using a rotary encoder, designed for Arduino components. (Work in Progress)</p>
+                                   <p class="mb-4">A C++ based menu screen for an LCD using a rotary encoder, designed for Arduino components.</p>
                                    <button class="win-button project-detail-button" data-project-id="proj3">Details</button>
                                </div>
                             </div>
@@ -492,11 +492,13 @@
         // Replace the placeholder image URLs with your actual project photos.
         const projectData = {
             "proj1": {
-                title: "MP3 Music App (Windows)",
+                title: "3D Space Mapping LiDAR Scanner",
                 images: [
-                    "resources/mp3_1.png"
+                    "resources/lidar_1.png"
                 ],
-                description: "Last summer, having been frustrated with the lack of a dark mode setting in iTunes, I set out to make my own player in which I could control the customizability. The resulting project involved creating a complete desktop music player from the ground up for the Windows platform. The goal was not necessarily to create the best product possible, but to gain experience in the tools related to software development. Using C# and the Windows Presentation Foundation (WPF) within Visual Studio, I engineered a functional application which included basic features. The development process focused on implementing core features essential for any music app, including robust audio playback controls and a system for managing music files within a user's library. Moving forward, I plan to implement a queue system, which is already in process, as well as in-app playlist and library management."
+                description: "The 3D Space Mapping LiDAR Scanner is designed to explore the capabilities of 3D scanning. However, pre-existing systems can be incredibly expensive, with a single scanner costing thousands of dollars. This device, created with a budget of $100, aims to recreate some of that functionality at a fraction of the cost. This project was created over a course of six weeks, for CSCE-462 at Texas A&M. <br> <br> To develop the scanner, I spent a considerable amount of time in CAD and mechanical engineering. The final project incorporates five self-designed 3D parts, with well over 15 total revisions. There was significant hardware development involved with this project. To drive a stepper, servo, and the TF-Luna TOF sensor, an Arduino Nano is used. On the rotating assembly, the metal-geared MG90s servo is used to drive the vertical rotation of the TF-Luna. The TF-Luna’s low power draw, affordable price, and 8m max range made it ideal for this project. The wiring between stationary components and rotating ones is managed with a slip ring, which lies below the rotating assembly. The user uses two Python scripts to interact with the device, the first controls the scan parameters, and the second allows for data visualization. A full report on this project can be found down below, if you're interested, please take a look.",
+                externLink: "resources/CSCE-462_Final_Written_Report.pdf",
+                linkText: "View Full Project Report"
             },
             "proj2": {
                 title: "ChatGPT/Notion Study Guide Generator",
@@ -514,7 +516,8 @@
                     "resources/arduino_2.png"
                 ],
                 description: "Check the repository for the latest updates and to view the source code! The goal is to build a C++ based menu system for an Arduino-compatible LCD screen. The menu is navigated using a rotary encoder and is designed to interface with various sensors and other components. I plan on connecting as many other devices as long as I have pins available. Currently, all menu functionality has been implemented and there is one functional option which is to read data from a temperature and humidity sensor.",
-                repoUrl: "https://github.com/danielwd27/Arduino-LCD-Based-Menu" // Added repo URL
+                externLink: "https://github.com/danielwd27/Arduino-LCD-Based-Menu",
+                linkText: "View Repository on GitHub", 
             },
             "proj4": {
                 title: "Envelope - Internet-Connected Message Display",
@@ -525,7 +528,8 @@
                     "resources/envelope_1.jpg"
                 ],
                 description: "With a 3d printed case, this device sits on a desk or nightstand, displaying real-time messages sent over the internet. It's built with an ESP32 CYD (Cheap-yellow-display) bought for just over $20. This is the most ambitious project I've created to date, please view the full features, details, and source code on the GitHub repository linked below.",
-                repoUrl: "https://github.com/danielwd27/Envelope"
+                externLink: "https://github.com/danielwd27/Envelope",
+                linkText: "View Repository on GitHub", 
             }
         };
 
@@ -553,9 +557,9 @@
             currentImages = data.images;
 
             // MODIFIED: Check for repoUrl and create button HTML
-            let repoButtonHTML = '';
-            if (data.repoUrl) {
-                repoButtonHTML = `<a href="${data.repoUrl}" target="_blank" rel="noopener noreferrer" class="win-button">View Repo</a>`;
+            let externalLinkHTML = '';
+            if (data.externLink) {
+                externalLinkHTML = `<a href="${data.externLink}" target="_blank" rel="noopener noreferrer" class="win-button">${data.linkText}</a>`;
             }
 
             // Create the HTML for the project detail page
@@ -580,7 +584,7 @@
                         </div>
 
                         <!-- Back Button --><div class="pt-4 border-t-2 border-gray-500 text-right flex justify-end gap-4">
-                            ${repoButtonHTML} <!-- Inject Repo button -->
+                            ${externalLinkHTML} <!-- Inject Repo button -->
                             <button id="back-to-portfolio" class="win-button">&lt;&lt; Back to Portfolio</button>
                         </div>
                     </div>
