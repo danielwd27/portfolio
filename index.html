@@ -176,7 +176,7 @@
         }
         .timeline-marker {
             position: absolute;
-            left: -1.9rem; /* Aligns with the dashed border */
+            left: -1.9rem;
             top: 0.35rem;
             width: 14px;
             height: 14px;
@@ -186,9 +186,9 @@
             border-right: 2px solid #000000;
             border-bottom: 2px solid #000000;
         }
-        .timeline-marker.completed { background: #000080; } /* Navy */
-        .timeline-marker.current { background: #008000; } /* Green */
-        .timeline-marker.planned { background: #808080; } /* Gray */
+        .timeline-marker.completed { background: #000080; }
+        .timeline-marker.current { background: #008000; }
+        .timeline-marker.planned { background: #808080; }
         
         .course-list {
             list-style-type: square;
@@ -287,6 +287,15 @@
                                    <h3 class="text-2xl font-bold mb-2">3D Space Mapping LiDAR Scanner</h3>
                                    <p class="mb-4">A comprehensive LiDAR scanner designed and constructed entirely from the ground up. Built with a TOF sensor, 2 motors, and a microcontroller. Programmed in C++ and Python.</p>
                                    <button class="win-button project-detail-button" data-project-id="proj1">Details</button>
+                               </div>
+                            </div>
+
+                            <div class="window animated-widget" style="transition-delay: 150ms;">
+                               <img class="w-full h-56 object-cover border-b-2 border-black" src="resources/aggtea_1.png" alt="AggTea - Shop Management System">
+                               <div class="p-4">
+                                   <h3 class="text-2xl font-bold mb-2">AggTea - Shop Management System</h3>
+                                   <p class="mb-4">A robust, web interface modeled after a boba tea store, providing a customer kiosk, cashier point-of-sale system, manager analytics and menu board. Created with Next.JS, React, TypeScript, PostgreSQL, and Tailwind CSS.</p>
+                                   <button class="win-button project-detail-button" data-project-id="proj5">Details</button>
                                </div>
                             </div>
 
@@ -488,8 +497,6 @@
 
     <script>
         // --- Project Data ---
-        // I've written descriptions based on your resume.
-        // Replace the placeholder image URLs with your actual project photos.
         const projectData = {
             "proj1": {
                 title: "3D Space Mapping LiDAR Scanner",
@@ -508,7 +515,6 @@
                 ],
                 description: "As part of the B4G Hackathon, I collaborated to engineer a full-stack solution to help students automate their study process. The project is comprised of three main components: a custom website for the user to interact with, a trained ChatGPT model, which handles user input and develops a formatted and detailed timeline, and a conversion to a tangible Notion UI element right into a page on the user's Notion account. While I helped to implement all of these functions as well as the dataflow, I primarily focused on the latter. Utilizing Notion API and JavaScript, I created the method to take the ChatGPT output and generate a stylized Timeline in Notion (technically implemented as a database). Ultimately the project helped me to understand the pipeline of software development and improved my skills on working in a coordinated group environment. Feel free to reach out and ask me about this project!"
             },
-            // NEW: Project 3 Data
             "proj3": {
                 title: "Arduino LCD Menu Screen",
                 images: [
@@ -530,6 +536,21 @@
                 description: "With a 3d printed case, this device sits on a desk or nightstand, displaying real-time messages sent over the internet. It's built with an ESP32 CYD (Cheap-yellow-display) bought for just over $20. This is the most ambitious project I've created to date, please view the full features, details, and source code on the GitHub repository linked below.",
                 externLink: "https://github.com/danielwd27/Envelope",
                 linkText: "View Repository on GitHub", 
+            },
+            "proj5": {
+                title: "AggTea - Shop Management System",
+                images: [
+                    "resources/aggtea_1.png",
+                    "resources/aggtea_2.png",
+                    "resources/aggtea_3.png",
+                    "resources/aggtea_4.png",
+                    "resources/aggtea_5.png",
+                    "resources/aggtea_6.png"
+
+                ],
+                description: "Created for CSCE-331 in collaboration with four other students, I served as team lead over the course of six weeks. I personally focused on developing the customer kiosk and accessibility features, amongst other smaller responsibilties. I implemented backend functionality using Next.JS API routes and PostgreSQL, and I developed the frontend using React components and Tailwind CSS. The resulting final project provides a complete web interface that could be implemented in a real boba tea store, providing a customer kiosk, cashier point-of-sale system, manager analytics and menu board. In addition to these views, there are extensions in a Claude Haiku powered chatbot, live API integration providing authentication, translation, and more. <br><br> This was a truly educational project teaching me the tools and methodology involved in maintaining a live service application. More so, I gained experience in project management through our use of Agile and in effectively collaborating during a long term commitment.",
+                // externLink: "https://github.com/",
+                // linkText: "View Repository on GitHub", 
             }
         };
 
