@@ -1,0 +1,219 @@
+body {
+    font-family: 'VT323', monospace;
+    background-color: #008080;
+    color: #000;
+    overflow-x: hidden;
+}
+
+.window {
+    background: #c0c0c0;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 3px;
+}
+
+.title-bar {
+    background: linear-gradient(to right, #000080, #1084d0);
+    color: #ffffff;
+    padding: 4px 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.25rem;
+    /* 20px */
+}
+
+.title-bar-controls button {
+    width: 20px;
+    height: 20px;
+    background: #c0c0c0;
+    border-top: 1px solid #ffffff;
+    border-left: 1px solid #ffffff;
+    border-right: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 3px;
+    font-family: 'Times New Roman', serif;
+    font-weight: bold;
+}
+
+.title-bar-controls button:active {
+    border-top: 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+}
+
+.window-body {
+    padding: 1.5rem;
+    min-height: 100px;
+}
+
+.win-button {
+    background: #c0c0c0;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+    padding: 0.5rem 1rem;
+}
+
+.win-button:active {
+    border-top: 2px solid #000000;
+    border-left: 2px solid #000000;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+}
+
+.status-bar {
+    margin-top: 4px;
+    border-top: 1px solid #808080;
+    border-left: 1px solid #808080;
+    border-right: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+    padding: 2px 4px;
+}
+
+/* Ensure mobile menu has retro styling */
+#mobile-menu a {
+    border: 1px dashed transparent;
+}
+
+#mobile-menu a:hover {
+    background-color: #000080;
+    color: #ffffff;
+    border: 1px dashed #ffffff;
+}
+
+.slideshow-container {
+    position: relative;
+    background-color: #000;
+    border: 2px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+}
+
+.slideshow-image {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    display: block;
+}
+
+.slideshow-controls {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    background-color: #c0c0c0;
+    border-top: 2px solid #808080;
+}
+
+.animated-widget {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animated-widget.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.badge-base {
+    margin: 0;
+}
+
+.badge-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 1.5rem auto;
+}
+
+.github-stats-card {
+    max-width: 100%;
+    height: auto;
+}
+
+.bio-container {
+    display: flex;
+    flex-direction: row;
+    padding-right: 0.25rem;
+}
+
+.tag {
+    border-top: 2px solid #000000;
+    border-left: 2px solid #000000;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    padding: 0.25rem 0.5rem;
+    display: inline-block;
+    max-width: 100%;
+    white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+    .bio-container {
+        flex-direction: column;
+    }
+
+    .bio-container .window-body {
+        padding: 1rem;
+    }
+
+    .tag {
+        white-space: normal;
+        overflow-wrap: anywhere;
+        line-height: 1.1;
+    }
+}
+
+.timeline {
+    border-left: 2px dashed #808080;
+    margin-left: 1rem;
+    padding-left: 1.5rem;
+    margin-top: 1rem;
+}
+
+.timeline-item {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -1.9rem;
+    top: 0.35rem;
+    width: 14px;
+    height: 14px;
+    background: #c0c0c0;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+}
+
+.timeline-marker.completed {
+    background: #000080;
+}
+
+.timeline-marker.current {
+    background: #008000;
+}
+
+.timeline-marker.planned {
+    background: #808080;
+}
+
+.course-list {
+    list-style-type: square;
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+}

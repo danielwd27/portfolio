@@ -7,196 +7,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="main.css">
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'VT323', monospace;
-            background-color: #008080; /* Classic teal wallpaper */
-            color: #000;
-            overflow-x: hidden; /* Prevent horizontal scroll from animations */
-        }
-
-        .window {
-            background: #c0c0c0;
-            border-top: 2px solid #ffffff;
-            border-left: 2px solid #ffffff;
-            border-right: 2px solid #000000;
-            border-bottom: 2px solid #000000;
-            box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            padding: 3px;
-        }
-
-        .title-bar {
-            background: linear-gradient(to right, #000080, #1084d0);
-            color: #ffffff;
-            padding: 4px 6px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 1.25rem; /* 20px */
-        }
-
-        .title-bar-controls button {
-            width: 20px;
-            height: 20px;
-            background: #c0c0c0;
-            border-top: 1px solid #ffffff;
-            border-left: 1px solid #ffffff;
-            border-right: 1px solid #000000;
-            border-bottom: 1px solid #000000;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            margin-left: 3px;
-            font-family: 'Times New Roman', serif;
-            font-weight: bold;
-        }
-        
-        .title-bar-controls button:active {
-           border-top: 1px solid #000000;
-           border-left: 1px solid #000000;
-           border-right: 1px solid #ffffff;
-           border-bottom: 1px solid #ffffff;
-        }
-
-        .window-body {
-            padding: 1.5rem;
-            min-height: 100px;
-        }
-        
-        .win-button {
-            background: #c0c0c0;
-            border-top: 2px solid #ffffff;
-            border-left: 2px solid #ffffff;
-            border-right: 2px solid #000000;
-            border-bottom: 2px solid #000000;
-            padding: 0.5rem 1rem;
-        }
-        .win-button:active {
-            border-top: 2px solid #000000;
-            border-left: 2px solid #000000;
-            border-right: 2px solid #ffffff;
-            border-bottom: 2px solid #ffffff;
-        }
-        
-        .status-bar {
-            margin-top: 4px;
-            border-top: 1px solid #808080;
-            border-left: 1px solid #808080;
-            border-right: 1px solid #ffffff;
-            border-bottom: 1px solid #ffffff;
-            padding: 2px 4px;
-        }
-        
-        /* Ensure mobile menu has retro styling */
-        #mobile-menu a {
-            border: 1px dashed transparent;
-        }
-        #mobile-menu a:hover {
-            background-color: #000080;
-            color: #ffffff;
-            border: 1px dashed #ffffff;
-        }
-
-        .slideshow-container {
-            position: relative;
-            background-color: #000;
-            border: 2px solid;
-            border-color: #808080 #ffffff #ffffff #808080;
-        }
-
-        .slideshow-image {
-            width: 100%;
-            height: auto;
-            max-height: 500px;
-            object-fit: contain;
-            display: block;
-        }
-
-        .slideshow-controls {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.5rem;
-            background-color: #c0c0c0;
-            border-top: 2px solid #808080;
-        }
-        
-        .animated-widget {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .animated-widget.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .badge-base {
-            margin: 0; 
-        }
-        
-        .badge-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center; 
-            gap: 1.5rem; 
-            margin: 1.5rem auto;
-        }
-
-        .github-stats-card {
-            max-width: 100%; 
-            height: auto;
-        }
-
-        .bio-container {
-            display: flex;
-            flex-direction: row;
-            padding-right: 0.25rem;
-        }
-
-        .tag {
-            border-top: 2px solid #000000;
-            border-left: 2px solid #000000;
-            border-right: 2px solid #ffffff;
-            border-bottom: 2px solid #ffffff;
-            padding: 0.25rem 0.5rem;
-            white-space: nowrap;
-        }
-
-        .timeline {
-            border-left: 2px dashed #808080;
-            margin-left: 1rem;
-            padding-left: 1.5rem;
-            margin-top: 1rem;
-        }
-        .timeline-item {
-            margin-bottom: 2rem;
-            position: relative;
-        }
-        .timeline-marker {
-            position: absolute;
-            left: -1.9rem;
-            top: 0.35rem;
-            width: 14px;
-            height: 14px;
-            background: #c0c0c0;
-            border-top: 2px solid #ffffff;
-            border-left: 2px solid #ffffff;
-            border-right: 2px solid #000000;
-            border-bottom: 2px solid #000000;
-        }
-        .timeline-marker.completed { background: #000080; }
-        .timeline-marker.current { background: #008000; }
-        .timeline-marker.planned { background: #808080; }
-        
-        .course-list {
-            list-style-type: square;
-            margin-left: 1.5rem;
-            margin-top: 0.5rem;
-        }
-
-    </style>
 </head>
 <body class="text-xl">
 
@@ -229,22 +41,22 @@
         <main class="container mx-auto px-6 py-12">
 
             <section id="hero" class="text-center py-10 flex flex-col items-center justify-center overflow-hidden">
-                
+
                 <div class="hidden md:flex w-full justify-center overflow-hidden">
                     <pre class="text-left text-white leading-none font-bold" style="text-shadow: 2px 2px #000; font-family: monospace; font-size: min(1.1vw, 1rem);">
- ██████████                         ███            ████     ██████████                         ███         
-▒▒███▒▒▒▒███                       ▒▒▒            ▒▒███    ▒▒███▒▒▒▒███                       ▒▒▒          
- ▒███   ▒▒███  ██████   ████████    ████   ██████  ▒███     ▒███   ▒▒███  ██████   █████ █████ ████   █████ 
- ▒███    ▒███ ▒▒▒▒▒███ ▒▒███▒▒███  ▒▒███  ███▒▒███ ▒███     ▒███    ▒███ ▒▒▒▒▒███ ▒▒███ ▒▒███ ▒▒███  ███▒▒  
- ▒███    ▒███  ███████  ▒███ ▒███  ▒███ ▒███████  ▒███     ▒███    ▒███  ███████  ▒███  ▒███  ▒███ ▒▒█████ 
+ ██████████                         ███            ████     ██████████                         ███
+▒▒███▒▒▒▒███                       ▒▒▒            ▒▒███    ▒▒███▒▒▒▒███                       ▒▒▒
+ ▒███   ▒▒███  ██████   ████████    ████   ██████  ▒███     ▒███   ▒▒███  ██████   █████ █████ ████   █████
+ ▒███    ▒███ ▒▒▒▒▒███ ▒▒███▒▒███  ▒▒███  ███▒▒███ ▒███     ▒███    ▒███ ▒▒▒▒▒███ ▒▒███ ▒▒███ ▒▒███  ███▒▒
+ ▒███    ▒███  ███████  ▒███ ▒███  ▒███ ▒███████  ▒███     ▒███    ▒███  ███████  ▒███  ▒███  ▒███ ▒▒█████
  ▒███    ███  ███▒▒███  ▒███ ▒███  ▒███ ▒███▒▒▒   ▒███     ▒███    ███  ███▒▒███  ▒▒███ ███   ▒███  ▒▒▒▒███
- ██████████  ▒▒████████ ████ █████ █████▒▒██████  █████    ██████████  ▒▒████████  ▒▒█████    █████ ██████ 
-▒▒▒▒▒▒▒▒▒▒    ▒▒▒▒▒▒▒▒ ▒▒▒▒ ▒▒▒▒▒ ▒▒▒▒▒  ▒▒▒▒▒▒  ▒▒▒▒▒    ▒▒▒▒▒▒▒▒▒▒    ▒▒▒▒▒▒▒▒    ▒▒▒▒▒    ▒▒▒▒▒ ▒▒▒▒▒▒  
+ ██████████  ▒▒████████ ████ █████ █████▒▒██████  █████    ██████████  ▒▒████████  ▒▒█████    █████ ██████
+▒▒▒▒▒▒▒▒▒▒    ▒▒▒▒▒▒▒▒ ▒▒▒▒ ▒▒▒▒▒ ▒▒▒▒▒  ▒▒▒▒▒▒  ▒▒▒▒▒    ▒▒▒▒▒▒▒▒▒▒    ▒▒▒▒▒▒▒▒    ▒▒▒▒▒    ▒▒▒▒▒ ▒▒▒▒▒▒
                     </pre>
                 </div>
 
                 <h1 class="md:hidden text-6xl font-extrabold text-white mb-4" style="text-shadow: 2px 2px #000;">Daniel Davis</h1>
-                
+
             </section>
 
             <section id="about" class="mb-12">
@@ -349,7 +161,7 @@
                     </div>
                     <div class="window-body text-2xl">
                         <p class="mb-4">A timeline of my academic coursework at Texas A&M, including my Computer Engineering core and Mathematics minor.</p>
-                        
+
                         <div class="flex flex-wrap gap-6 mb-6 text-xl p-2 border-2 border-gray-500 bg-[#c0c0c0]">
                             <div class="flex items-center gap-2"><div class="w-4 h-4 bg-[#000080] border-t-2 border-l-2 border-white border-r-2 border-b-2 border-r-black border-b-black"></div> Completed</div>
                             <div class="flex items-center gap-2"><div class="w-4 h-4 bg-[#008000] border-t-2 border-l-2 border-white border-r-2 border-b-2 border-r-black border-b-black"></div> Current (Spring 2026)</div>
@@ -357,7 +169,7 @@
                         </div>
 
                         <div class="timeline mt-6">
-                            
+
                             <div class="timeline-item">
                                 <div class="timeline-marker completed"></div>
                                 <h3 class="text-3xl font-bold">Years 1 & 2 (Fall 2023 - Spring 2025)</h3>
@@ -460,18 +272,18 @@
                     </div>
                     <div class="window-body text-center">
                         <p class="text-2xl mb-6">Please reach out to connect!</p>
-                        
+
                         <div class="badge-container">
                             <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="daniel-davis-bb90802a9" data-version="v1">
                                 </div>
 
                             <a href="https://github.com/danielwd27" target="_blank" rel="noopener noreferrer">
-                                <img src="https://github-readme-stats.vercel.app/api?username=danielwd27&show_icons=true&border_color=000000&title_color=000080&icon_color=000080&text_color=000000&hide_border=false" 
-                                     alt="Daniel Davis' GitHub Stats" 
+                                <img src="https://github-readme-stats.vercel.app/api?username=danielwd27&show_icons=true&border_color=000000&title_color=000080&icon_color=000080&text_color=000000&hide_border=false"
+                                     alt="Daniel Davis' GitHub Stats"
                                      class="github-stats-card" />
                             </a>
                         </div>
-                        
+
                         <div class="flex justify-center items-center flex-wrap gap-4 mt-6"> <!-- Added margin-top --><a href="mailto:ddavis6q@tamu.edu" class="win-button">Email</a>
                              <a href="resources/Davis_Daniel.pdf" target="_blank" rel="noopener noreferrer" class="win-button">View Resume</a>
                              <a href="https://github.com/danielwd27" target="_blank" rel="noopener noreferrer" class="win-button">GitHub Profile</a>
@@ -526,7 +338,7 @@
                 ],
                 description: "Check the repository for the latest updates and to view the source code! The goal is to build a C++ based menu system for an Arduino-compatible LCD screen. The menu is navigated using a rotary encoder and is designed to interface with various sensors and other components. I plan on connecting as many other devices as long as I have pins available. Currently, all menu functionality has been implemented and there is one functional option which is to read data from a temperature and humidity sensor.",
                 externLink: "https://github.com/danielwd27/Arduino-LCD-Based-Menu",
-                linkText: "View Repository on GitHub", 
+                linkText: "View Repository on GitHub",
             },
             "proj4": {
                 title: "Envelope - Internet-Connected Message Display",
@@ -538,7 +350,7 @@
                 ],
                 description: "With a 3d printed case, this device sits on a desk or nightstand, displaying real-time messages sent over the internet. It's built with an ESP32 CYD (Cheap-yellow-display) bought for just over $20. This is the most ambitious project I've created to date, please view the full features, details, and source code on the GitHub repository linked below.",
                 externLink: "https://github.com/danielwd27/Envelope",
-                linkText: "View Repository on GitHub", 
+                linkText: "View Repository on GitHub",
             },
             "proj5": {
                 title: "AggTea - Shop Management System",
@@ -553,7 +365,7 @@
                 ],
                 description: "Created for CSCE-331 in collaboration with four other students, I served as team lead over the course of six weeks. I personally focused on developing the customer kiosk and accessibility features, amongst other smaller responsibilties. I implemented backend functionality using Next.JS API routes and PostgreSQL, and I developed the frontend using React components and Tailwind CSS. The resulting final project provides a complete web interface that could be implemented in a real boba tea store, providing a customer kiosk, cashier point-of-sale system, manager analytics and menu board. In addition to these views, there are extensions in a Claude Haiku powered chatbot, live API integration providing authentication, translation, and more. <br><br> This was a truly educational project teaching me the tools and methodology involved in maintaining a live service application. More so, I gained experience in project management through our use of Agile and in effectively collaborating during a long term commitment.",
                 // externLink: "https://github.com/",
-                // linkText: "View Repository on GitHub", 
+                // linkText: "View Repository on GitHub",
             }
         };
 
@@ -601,7 +413,7 @@
                             <span id="image-counter" class="p-2">${currentImageIndex + 1} / ${currentImages.length}</span>
                             <button id="next-btn" class="win-button">Next &gt;&gt;</button>
                         </div>
-                        
+
                         <!-- Description --><div>
                             <h3 class="text-3xl font-bold">Project Description</h3>
                             <p class="mt-2">${data.description}</p>
@@ -619,16 +431,16 @@
             projectDetailContainer.innerHTML = projectHTML;
             mainPortfolioDiv.classList.add('hidden');
             projectDetailContainer.classList.remove('hidden');
-            
+
             // Hide main nav links, show home-only link
             mainNavLinks.classList.add('hidden');
             mobileMenu.classList.add('hidden');
-            
+
             // Add event listeners for the new buttons
             document.getElementById('prev-btn').addEventListener('click', showPrevImage);
             document.getElementById('next-btn').addEventListener('click', showNextImage);
             document.getElementById('back-to-portfolio').addEventListener('click', hideProjectDetails);
-            
+
             // Scroll to top
             window.scrollTo(0, 0);
         }
@@ -637,13 +449,13 @@
             // Hide project content, show main content
             projectDetailContainer.classList.add('hidden');
             mainPortfolioDiv.classList.remove('hidden');
-            
+
             // Show main nav links
             mainNavLinks.classList.remove('hidden');
-            
+
             // Clear the project HTML
             projectDetailContainer.innerHTML = '';
-            
+
             // Ensure the URL hash is clean by setting it to empty
             // This avoids the pushState SecurityError in sandboxed environments
             window.location.hash = '';
@@ -686,7 +498,7 @@
         // --- NEW: Smooth scrolling for all nav links ---
         const header = document.querySelector('header');
         // Get header height, provide a fallback
-        const headerHeight = header ? header.offsetHeight : 70; 
+        const headerHeight = header ? header.offsetHeight : 70;
 
         const allNavLinks = [
             ...document.querySelectorAll('#main-nav-links a'),
@@ -696,7 +508,7 @@
         allNavLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault(); // Stop the default hash jump
-                
+
                 const href = link.getAttribute('href');
                 if (!href || href === '#') return; // Safety check
 
@@ -712,21 +524,21 @@
 
                 if (targetElement) {
                     // Calculate position: target's top position - header height - 20px buffer
-                    const targetPosition = targetElement.offsetTop - headerHeight - 20; 
+                    const targetPosition = targetElement.offsetTop - headerHeight - 20;
 
                     window.scrollTo({
                         top: targetPosition,
                         behavior: 'smooth'
                     });
                 }
-                
+
                 // If it's a mobile link (or menu is open), hide the menu
                 if (mobileMenu.classList.contains('hidden') === false) {
                     mobileMenu.classList.add('hidden');
                 }
             });
         });
-        
+
         /* // This logic is now handled by the listener above
         // Close mobile menu when a link is clicked
         mobileNavLinks.forEach(link => {
@@ -735,7 +547,7 @@
             });
         });
         */
-        
+
         // Listen for hash changes to show/hide projects
         window.addEventListener('hashchange', () => {
             const hash = window.location.hash.substring(1);
@@ -745,7 +557,7 @@
                 hideProjectDetails();
             }
         });
-        
+
         // Check hash on initial page load
         const initialHash = window.location.hash.substring(1);
         if (projectData[initialHash]) {
@@ -803,7 +615,7 @@
         });
 
     </script>
-    
+
     <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 
 </body>
