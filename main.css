@@ -63,6 +63,13 @@ body {
     padding: 0.5rem 1rem;
 }
 
+.win-button.primary {
+    background: #0841a7;
+    color: #ffffff;
+    border-right: 2px solid #000080;
+    border-bottom: 2px solid #000080;
+}
+
 .win-button:active {
     border-top: 2px solid #000000;
     border-left: 2px solid #000000;
@@ -157,6 +164,16 @@ body {
     display: inline-block;
     max-width: 100%;
     white-space: nowrap;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between
+}
+
+.tag.proj-card {
+    height: 100%;
+    /* margin-left: auto; */
 }
 
 @media (max-width: 640px) {
